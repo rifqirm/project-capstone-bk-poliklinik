@@ -54,6 +54,7 @@ class AdminController extends Controller
         return view('admin.dokter-edit', compact('dokter', 'polis'));
     }
 
+
     public function updateDokter(Request $request, Dokter $dokter)
     {
         $request->validate([
@@ -73,7 +74,7 @@ class AdminController extends Controller
     {
         if ($dokter == null) {
             return redirect()->route('admin-dokter')
-            ->with('success', 'Dokter '.$dokter->nama.' sudah dihapus sebelumnya!');
+                ->with('success', 'Dokter ' . $dokter->nama . ' sudah dihapus sebelumnya!');
         }
         $hasRelatedJadwalPeriksa = JadwalPeriksa::where('id_dokter', $dokter->id)->exists();
         if ($hasRelatedJadwalPeriksa) {
@@ -82,7 +83,7 @@ class AdminController extends Controller
         $dokter->delete();
 
         return redirect()->route('admin-dokter')
-            ->with('success', 'Dokter '.$dokter->nama.' berhasil dihapus!');
+            ->with('success', 'Dokter ' . $dokter->nama . ' berhasil dihapus!');
     }
 
     // ~~ PASIEN ~~
@@ -90,9 +91,9 @@ class AdminController extends Controller
     public function pasien()
     {
         $pasiens = Pasien::orderBy(DB::raw('SUBSTRING_INDEX(no_rm, "-", -1)'), 'ASC')
-                        ->orderBy('no_rm', 'ASC')
-                        ->get();
-        
+            ->orderBy('no_rm', 'ASC')
+            ->get();
+
         return view('admin.pasien', compact('pasiens'));
     }
 
@@ -148,7 +149,7 @@ class AdminController extends Controller
     {
         if ($pasien == null) {
             return redirect()->route('admin-pasien')
-            ->with('success', 'Pasien '.$pasien->nama.' sudah dihapus sebelumnya!');
+                ->with('success', 'Pasien ' . $pasien->nama . ' sudah dihapus sebelumnya!');
         }
         $hasRelatedPasien = DaftarPoli::where('id_pasien', $pasien->id)->exists();
         if ($hasRelatedPasien) {
@@ -157,7 +158,7 @@ class AdminController extends Controller
         $pasien->delete();
 
         return redirect()->route('admin-pasien')
-            ->with('success', 'Pasien '.$pasien->nama.' berhasil dihapus!');
+            ->with('success', 'Pasien ' . $pasien->nama . ' berhasil dihapus!');
     }
 
     // ~~ POLIKLINIK ~~
@@ -208,7 +209,7 @@ class AdminController extends Controller
     {
         if ($poli == null) {
             return redirect()->route('admin-poli')
-            ->with('success', 'Poli sudah dihapus sebelumnya!');
+                ->with('success', 'Poli sudah dihapus sebelumnya!');
         }
 
         $hasRelatedDokter = Dokter::where('id_poli', $poli->id)->exists();
@@ -248,7 +249,7 @@ class AdminController extends Controller
         return redirect()->route('admin-obat')
             ->with('success', 'Obat berhasil ditambahkan!');
     }
-    
+
     public function editObat(Obat $obat)
     {
         return view('admin.obat-edit', compact('obat'));
@@ -272,7 +273,7 @@ class AdminController extends Controller
     {
         if ($obat == null) {
             return redirect()->route('admin-obat')
-            ->with('success', 'Obat sudah dihapus sebelumnya!');
+                ->with('success', 'Obat sudah dihapus sebelumnya!');
         }
         $hasRelatedObat = DetailPeriksa::where('id_obat', $obat->id)->exists();
         if ($hasRelatedObat) {
