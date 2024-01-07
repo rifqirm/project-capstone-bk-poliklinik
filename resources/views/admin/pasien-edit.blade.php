@@ -89,7 +89,7 @@
                         document.write(new Date().getFullYear() + ",");
                       </script>
                       dibuat oleh
-                      <a href="" class="font-semibold text-slate-700" target="_blank">Naufal Iksham</a>
+                      <a href="" class="font-semibold text-slate-700" target="_blank">Rifqi Ramadhani M</a>
                       untuk website yang lebih baik.
                     </div>
                   </div>
