@@ -38,27 +38,27 @@ class DokterController extends Controller
 
         return redirect()->back()->with('error', 'Anda tidak memiliki izin untuk mengakses halaman ini.');
     }
-    
-public function statusJadwalPeriksa($id)
-{
-    $jadwalPeriksa = JadwalPeriksa::find($id);
 
-    if (!$jadwalPeriksa) {
-        return redirect()->back()->with('error', 'JadwalPeriksa tidak ditemukan.');
+    public function statusJadwalPeriksa($id)
+    {
+        $jadwalPeriksa = JadwalPeriksa::find($id);
+
+        if (!$jadwalPeriksa) {
+            return redirect()->back()->with('error', 'JadwalPeriksa tidak ditemukan.');
+        }
+
+        if ($jadwalPeriksa->aktif == 'Y') {
+            $jadwalPeriksa->update([
+                'aktif' => 'N',
+            ]);
+        } else if ($jadwalPeriksa->aktif == 'N') {
+            $jadwalPeriksa->update([
+                'aktif' => 'Y',
+            ]);
+        }
+
+        return redirect()->route('dokter-jadwal-periksa')->with('success', 'Status jadwal periksa berhasil diubah.');
     }
-
-    if ($jadwalPeriksa->aktif == 'Y') {
-        $jadwalPeriksa->update([
-            'aktif' => 'N',
-        ]);
-    } else if ($jadwalPeriksa->aktif == 'N') {
-        $jadwalPeriksa->update([
-            'aktif' => 'Y',
-        ]);
-    }
-
-    return redirect()->route('dokter-jadwal-periksa')->with('success', 'Status jadwal periksa berhasil diubah.');
-}
 
 
     public function tambahJadwalPeriksa()
@@ -82,7 +82,7 @@ public function statusJadwalPeriksa($id)
                 function ($attribute, $value, $fail) use ($request) {
                     $jamMulai = strtotime($request->input('jam_mulai'));
                     $jamSelesai = strtotime($value);
-                    
+
                     if ($jamSelesai <= $jamMulai) {
                         $fail('Jam mulai harus lebih dahulu dari jam selesai!');
                     }
@@ -212,9 +212,9 @@ public function statusJadwalPeriksa($id)
     {
         // Ambil hanya data yang keluhannya belum 'selesai'
         $daftar_periksa = DaftarPoli::where('keluhan', '!=', 'selesai')
-                                    ->orderBy('id_jadwal')
-                                    ->orderBy('no_antrian')
-                                    ->get();
+            ->orderBy('id_jadwal')
+            ->orderBy('no_antrian')
+            ->get();
         return view('dokter.daftar-periksa', compact('daftar_periksa'));
     }
 
@@ -236,7 +236,7 @@ public function statusJadwalPeriksa($id)
     {
         $pasienIni = DaftarPoli::findOrFail($id);
         $daftar_obat = Obat::all();
-        return view('dokter.periksakan-daftar-periksa', compact('pasienIni','daftar_obat'));
+        return view('dokter.periksakan-daftar-periksa', compact('pasienIni', 'daftar_obat'));
     }
 
     public function simpanPeriksakanDaftarPeriksa(Request $request, $id)
@@ -277,7 +277,7 @@ public function statusJadwalPeriksa($id)
     {
         $detail_periksa = DetailPeriksa::findOrFail($id);
         $id_obat = DetailPeriksa::with('obat')->where('id_periksa', $id)->get();
-        return view('dokter.detail_riwayat-periksa', compact('detail_periksa','id_obat'));
+        return view('dokter.detail_riwayat-periksa', compact('detail_periksa', 'id_obat'));
     }
 
     public function destroyRiwayatPeriksa($id)

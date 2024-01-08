@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 @extends('layout.head')
+<style>
+  /* CSS Internal */
+  .nav-item a:hover {
+    color: red;
+    /* Warna teks berubah menjadi merah saat dihover */
+  }
+</style>
 
 <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
 
@@ -54,10 +61,18 @@
               <div class="flex flex-wrap mt-0 -mx-3">
                 <div class="flex-none w-7/12 max-w-full px-3 mt-0 lg:w-1/2 lg:flex-none">
                   <ol class="list-decimal pl-6" style="list-style: decimal; color:black">
-                    <li class="mb-2">Melakukan Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident suscipit doloribus perferendis aspernatur nemo. Perspiciatis ipsum molestias, iure mollitia magni nam, animi distinctio ut dicta accusamus, ea molestiae quod alias?</li>
-                    <li class="mb-2">Melakukan Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla perspiciatis cumque at minima, maiores rerum animi reiciendis earum libero facere dolorum a odit distinctio, numquam iste veniam sed eveniet nisi!</li>
-                    <li class="mb-2">Melakukan Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quod aliquid aut earum voluptates exercitationem error asperiores consequuntur. Rerum iure molestiae architecto a hic laborum inventore, nemo laudantium. Laudantium, perferendis?</li>
-                    <li class="mb-2">Melakukan Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet harum eius pariatur voluptas officiis, libero deserunt sunt laudantium vero nobis quam nesciunt repellat a, qui commodi quidem expedita dicta. Officia.</li>
+                    <li class="mb-2">Melakukan Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+                      suscipit doloribus perferendis aspernatur nemo. Perspiciatis ipsum molestias, iure mollitia magni
+                      nam, animi distinctio ut dicta accusamus, ea molestiae quod alias?</li>
+                    <li class="mb-2">Melakukan Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla
+                      perspiciatis cumque at minima, maiores rerum animi reiciendis earum libero facere dolorum a odit
+                      distinctio, numquam iste veniam sed eveniet nisi!</li>
+                    <li class="mb-2">Melakukan Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quod
+                      aliquid aut earum voluptates exercitationem error asperiores consequuntur. Rerum iure molestiae
+                      architecto a hic laborum inventore, nemo laudantium. Laudantium, perferendis?</li>
+                    <li class="mb-2">Melakukan Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet harum eius
+                      pariatur voluptas officiis, libero deserunt sunt laudantium vero nobis quam nesciunt repellat a,
+                      qui commodi quidem expedita dicta. Officia.</li>
                   </ol>
                 </div>
               </div>

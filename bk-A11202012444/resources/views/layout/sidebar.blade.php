@@ -15,39 +15,38 @@
   <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
 
   <div class="items-center block w-auto max-h-screen overflow-auto grow basis-full">
-    <ul class="flex flex-col pl-0 mb-0">
+    <ul class="flex flex-col pl-0 mb-0" style="height: 35rem;">
       @if (Auth::user()->role->nama_role == 'admin')
       <li class="mt-0.5 w-full">
         <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{route('admin-dashboard')}}">
-
-          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
+          style="background-color: #00A9FF; color: lightyellow; font-size: larger;" href="{{route('admin-dashboard')}}">
+          <span class="ml-1 duration-300 opacity-100 bg-red-500 pointer-events-none ease-soft">Dashboard</span>
         </a>
       </li>
       <li class="mt-0.5 w-full">
         <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{route('admin-dokter')}}">
+          style="background-color: #00A9FF;color: lightyellow; font-size: larger;" href="{{route('admin-dokter')}}">
 
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dokter</span>
         </a>
       </li>
       <li class="mt-0.5 w-full">
         <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{route('admin-pasien')}}">
+          style="background-color: #00A9FF;color: lightyellow; font-size: larger;" href="{{route('admin-pasien')}}">
 
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Pasien</span>
         </a>
       </li>
       <li class="mt-0.5 w-full">
         <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{route('admin-poli')}}">
+          style="background-color: #00A9FF;color: lightyellow; font-size: larger;" href="{{route('admin-poli')}}">
 
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Poliklinik</span>
         </a>
       </li>
       <li class="mt-0.5 w-full">
         <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{route('admin-obat')}}">
+          style="background-color: #00A9FF;color: lightyellow; font-size: larger;" href="{{route('admin-obat')}}">
 
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Obat</span>
         </a>
@@ -55,13 +54,14 @@
       @elseif (Auth::user()->role->nama_role == 'pasien')
       <li class="mt-0.5 w-full">
         <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{route('pasien-dashboard')}}">
+          style="background-color: #00A9FF;color: lightyellow; font-size: larger;" href="{{route('pasien-dashboard')}}">
 
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
         </a>
       </li>
       <li class="mt-0.5 w-full">
         <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
+          style="background-color: #00A9FF;color: lightyellow; font-size: larger;"
           href="{{route('pasien-poliklinik')}}">
 
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Poliklinik</span>
@@ -69,14 +69,15 @@
       </li>
       @elseif (Auth::user()->role->nama_role == 'dokter')
       <li class="mt-0.5 w-full">
-        <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{route('dokter-dashboard')}}">
+        <a class="hover:shadow-soft-2xl background-color: gainsboro rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
+          style="background-color: #00A9FF;color: lightyellow; font-size: larger;" href="{{route('dokter-dashboard')}}">
 
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
         </a>
       </li>
       <li class="mt-0.5 w-full">
         <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
+          style="background-color: #00A9FF;color: lightyellow; font-size: larger;"
           href="{{route('dokter-jadwal-periksa')}}">
 
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Atur Jadwal Periksa</span>
@@ -84,6 +85,7 @@
       </li>
       <li class="mt-0.5 w-full">
         <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
+          style="background-color: #00A9FF;color: lightyellow; font-size: larger;"
           href="{{ route('dokter-daftar-periksa') }}">
 
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Daftar Periksa</span>
@@ -91,6 +93,7 @@
       </li>
       <li class="mt-0.5 w-full">
         <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
+          style="background-color: #00A9FF;color: lightyellow; font-size: larger;"
           href="{{ route('dokter-riwayat-periksa') }}">
 
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Riwayat Periksa</span>
@@ -99,21 +102,16 @@
       @endif
 
       <li class="w-full mt-4">
-        <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60">Halaman Akun</h6>
-      </li>
-      <li class="mt-0.5 w-full">
-        <a class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="">
-
-          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Profil</span>
-        </a>
+        <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60"
+          style="font-size: medium; margin-top: 5rem;">⬇⬇⬇
+          Ganti Akun ⬇⬇⬇</h6>
       </li>
 
       @auth
       <li class="mt-0.5 w-full">
         <form method="POST" action="{{ url('logout') }}">
           @csrf
-          <button type="submit"
+          <button type="submit" style="background-color: #ea060614;"
             class="hover:shadow-soft-2xl rounded py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors">
 
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Keluar</span>

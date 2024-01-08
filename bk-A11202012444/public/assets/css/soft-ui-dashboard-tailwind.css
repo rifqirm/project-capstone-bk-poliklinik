@@ -238,6 +238,7 @@ button,
   -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
+  color: #ea0606;
   /* 2 */
   background-image: none;
   /* 2 */
@@ -963,7 +964,7 @@ h6 {
 }
 
 .mt-0\.5 {
-  margin-top: 0.125rem;
+  margin-top: 0.8rem;
 }
 
 .mr-2 {
@@ -1303,7 +1304,7 @@ h6 {
 }
 
 .max-h-screen {
-  max-height: 100vh;
+  max-height: 110vh;
 }
 
 .min-h-6 {
@@ -3529,7 +3530,7 @@ h6 {
 }
 
 .hover\:shadow-soft-2xl:hover {
-  --tw-shadow: 0 .3125rem .625rem 0 rgba(0,0,0,.12);
+  --tw-shadow: 0 .3125rem .625rem 0 rgb(0, 0, 0);
   --tw-shadow-colored: 0 .3125rem .625rem 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }

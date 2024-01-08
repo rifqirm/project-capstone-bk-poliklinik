@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 @extends('layout.head')
+<style>
+  /* CSS Internal */
+  .nav-item a:hover {
+    color: red;
+    /* Warna teks berubah menjadi merah saat dihover */
+  }
+</style>
 
 <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
 
@@ -102,11 +109,12 @@
                     class="block px-4 pt-0 pb-1 text-sm font-normal transition-colors ease-soft-in-out text-slate-500"
                     target="_blank">Facebook</a>
                 </li>
-                <li class="nav-item">
-                  <a href="https://api.whatsapp.com/send/?phone=6282237914066&text&type=phone_number&app_absent=0"
+
+                <li class="nav-item"> <a
+                    href="https://api.whatsapp.com/send/?phone=6282237914066&text&type=phone_number&app_absent=0"
+                    style=""
                     class="block px-4 pt-0 pb-1 pr-0 text-sm font-normal transition-colors ease-soft-in-out text-slate-500"
-                    target="_blank">WhatsApp</a>
-                </li>
+                    target="_blank">WhatsApp</a> </li>
               </ul>
             </div>
           </div>

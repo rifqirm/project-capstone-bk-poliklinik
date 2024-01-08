@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 @extends('layout.head')
+<style>
+  /* CSS Internal */
+  .nav-item a:hover {
+    color: red;
+    /* Warna teks berubah menjadi merah saat dihover */
+  }
+</style>
 
 <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
 

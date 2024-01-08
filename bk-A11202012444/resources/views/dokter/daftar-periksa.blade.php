@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 @extends('layout.head')
+<style>
+  /* CSS Internal */
+  .nav-item a:hover {
+    color: red;
+    /* Warna teks berubah menjadi merah saat dihover */
+  }
+</style>
 
 <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
 
@@ -117,12 +124,14 @@
                       <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
                         <div class="flex justify-center items-center">
                           <a href="{{ route('dokter-periksakan-daftar-periksa', $dp->id) }}"
-                            class="btn btn-warning mr-2 py-1 px-4" style="color:#b017ab">Periksa Pasien</a>
+                            class="btn btn-warning mr-2 py-1 px-4 rounded-lg"
+                            style="color: #ffffff; background: orange;">Periksa Pasien</a>
                           <form method="POST" action="{{ route('dokter-destroy-daftar-poli', ['id' => $dp->id]) }}"
                             style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" style="color: red"
+                            <button type="submit" class="btn btn-danger py-1 px-4 rounded-lg"
+                              style="color: #ffffff; background: red;"
                               onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
                           </form>
                         </div>

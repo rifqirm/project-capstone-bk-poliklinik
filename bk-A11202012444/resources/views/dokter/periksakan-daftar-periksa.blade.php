@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 @extends('layout.head')
+<style>
+  /* CSS Internal */
+  .nav-item a:hover {
+    color: red;
+    /* Warna teks berubah menjadi merah saat dihover */
+  }
+</style>
 
 <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
 
@@ -185,7 +192,7 @@
                         batalButton.type = 'button';
                         batalButton.innerText = 'Hapus ' + selectedObat;
                         batalButton.classList.add('btn', 'btn-danger', 'shadow-soft-2xl', 'rounded-lg', 'bg-dark', 'stroke-0', 'text-center', 'p-1');
-                        batalButton.style.backgroundImage = 'linear-gradient(to bottom right, #ef0488, #8624c2)';
+                        batalButton.style.backgroundImage = 'linear-gradient(to bottom right, red, red)';
                         batalButton.style.color = 'white';
                         batalButton.addEventListener('click', function () {
                           obatInputs.removeChild(obatDiv);
@@ -225,7 +232,7 @@
                   <div class="mb-4 flex justify-center">
                     <button type="submit"
                       class="btn btn-success shadow-soft-2xl rounded-lg bg-dark stroke-0 text-center xl:p-2.5"
-                      style="background-image: linear-gradient(to bottom right, #ef0488, #8624c2); color:white;">Tambah
+                      style="background-image: linear-gradient(to bottom right, #00A9FF, #11fc00); color:white;">Tambah
                       pasien</button>
                   </div>
                 </form>

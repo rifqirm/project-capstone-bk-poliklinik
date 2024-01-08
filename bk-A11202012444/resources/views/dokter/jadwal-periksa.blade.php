@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 @extends('layout.head')
+<style>
+  /* CSS Internal */
+  .nav-item a:hover {
+    color: red;
+    /* Warna teks berubah menjadi merah saat dihover */
+  }
+</style>
 
 <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
 
@@ -62,7 +69,7 @@
                 <div class="flex-none w-5/12 max-w-full px-3 mt-0 text-right lg:w-1/2 lg:flex-none">
                   <a href="{{ route('dokter-tambah-jadwal-periksa') }}"
                     class="btn btn-success shadow-soft-2xl rounded-lg bg-dark stroke-0 text-center xl:p-2.5"
-                    style="background-image: linear-gradient(to bottom right, #ef0488, #8624c2); color:white;">Tambah
+                    style="background-image: linear-gradient(to bottom right, #00A9FF, #11fc00); color:white;">Tambah
                     Jadwal Periksa</a>
                 </div>
               </div>
@@ -130,7 +137,7 @@
                           <form method="POST" action="{{ route('dokter-status-jadwal-periksa', ['id' => $jp->id]) }}"
                             style="display: inline;">
                             @csrf
-                            <button type="submit" class="btn btn-primary mr-2 py-1 px-4" style="color:#7928ca">Ubah
+                            <button type="submit" class="btn btn-primary mr-2 py-1 px-4" style="color:lightred">Ubah
                               Status</button>
                         </center>
                         </form>
@@ -138,12 +145,14 @@
                       <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
                         <div class="flex justify-center items-center">
                           <a href="{{ route('dokter-edit-jadwal-periksa', $jp->id) }}"
-                            class="btn btn-warning mr-2 py-1 px-4" style="color:#b017ab">Edit</a>
+                            class="btn btn-warning mr-2 py-1 px-4 rounded-lg"
+                            style="color: #ffffff; background: orange;">Edit</a>
                           <form action="{{ route('dokter-destroy-jadwal-periksa', $jp->id) }}" method="POST"
                             style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger py-1 px-4" style="color:#7928ca"
+                            <button type="submit" class="btn btn-danger py-1 px-4 rounded-lg"
+                              style="color: #ffffff; background: red;"
                               onclick="return confirm('Apakah Anda yakin ingin menghapus jadwal periksa ini?')">Hapus</button>
                           </form>
                         </div>
