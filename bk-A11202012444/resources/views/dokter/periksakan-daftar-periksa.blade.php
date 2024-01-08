@@ -232,8 +232,8 @@
                   <div class="mb-4 flex justify-center">
                     <button type="submit"
                       class="btn btn-success shadow-soft-2xl rounded-lg bg-dark stroke-0 text-center xl:p-2.5"
-                      style="background-image: linear-gradient(to bottom right, #00A9FF, #11fc00); color:white;">Tambah
-                      pasien</button>
+                      style="background-image: linear-gradient(to bottom right, #00A9FF, #11fc00); color:white;">Periksakan
+                      Pasien</button>
                   </div>
                 </form>
               </div>
