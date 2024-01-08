@@ -137,7 +137,7 @@
                           <form method="POST" action="{{ route('dokter-status-jadwal-periksa', ['id' => $jp->id]) }}"
                             style="display: inline;">
                             @csrf
-                            <button type="submit" class="btn btn-primary mr-2 py-1 px-4" style="color:lightred">Ubah
+                            <button type="submit" class="btn btn-primary mr-2 py-1 px-4" style="color:red">Ubah
                               Status</button>
                         </center>
                         </form>
